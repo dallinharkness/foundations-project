@@ -249,7 +249,7 @@ canvas{
     border: 2px solid #17B890;
     background-image: url('/space.gif');
     position: relative;
-    top: -60px;
+    top: -200px;
     
    
 }
@@ -258,7 +258,7 @@ canvas{
 
 #boostbtn{
     position: relative;
-    top: 470px;
+    top: -190px;
     right: 0px;
     font-size: 40px;
     border-radius: 10px;
@@ -269,19 +269,20 @@ canvas{
 
 #bodyCanvas{
     display: flex;
-    height: 50vh;
+    height: 0vh;
     flex-direction: column;
     justify-content: space-between;
     background-color: #082D0F;
+    overflow: hidden;
 }
 
 #footer{
     font-family: 'Gugi', cursive;
     text-align: center;
-    height: 5vh;
+    height: 0vh;
     color: #17B890;
     position: relative;
-    top: 512px;
+    top: -120px;
 }
 
 #gamebox{
@@ -290,4 +291,30 @@ canvas{
     background-color: #082D0F;
     position: relative;
     /* z-index: -4; */
+}
+
+/* scoreboards*/
+
+#scores{
+    border: 2px solid #17B890;
+    color: white;
+    float: left;
+    display: flex;
+    position: relative;
+    left: -630px;
+    top: 40px;
+
+}
+
+#userScores{
+    border: 2px #17B890 solid;
+    padding: 10px;
+    font-family: 'Gugi', cursive;
+    font-size: 25px;
+
+}
+
+table,th,td{
+    /* border: 1px solid #17B890; */
+    padding: 5px;
 }
