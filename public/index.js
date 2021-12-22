@@ -31,6 +31,7 @@ function component(width, height, color, x, y, type) {
     if(type == "image") {
         this.image = new Image(40, 40)
         this.image.src = '/ufo-gif.gif'
+        
     }
     this.width = width;
     this.height = height;
@@ -38,19 +39,17 @@ function component(width, height, color, x, y, type) {
     this.y = y;
     this.speedX = 0
     this.speedY = 0
-    this.gravity = .04
+    this.gravity = .08
     this.gravitySpeed = 0
 
     this.update = function(){
     ctx = myGameArea.context;
     if(type == 'image'){
-        console.log('if')
         ctx.drawImage(this.image,
             this.x,
             this.y,
             this.width, this.height)
     }else{
-        console.log('else')
         ctx.fillStyle = color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
     }
@@ -84,7 +83,7 @@ function component(width, height, color, x, y, type) {
         if((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
             crash = false
         }
-        return crash
+        return crash 
     }   
 
     this.hitBottom = function() {
@@ -121,8 +120,8 @@ function updateGameArea() {
         minGap = 50
         maxGap = 200
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap)
-        myObstacles.push(new component(35, height, 'blue', x, 0, 'image'))
-        myObstacles.push(new component(35, x - height - gap, 'blue', x, height + gap, 'image'))
+        myObstacles.push(new component(35, height, 'blue', x, 0))
+        myObstacles.push(new component(35, x - height - gap, 'blue', x, height + gap))
     }
     for(i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -4.5

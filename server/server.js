@@ -1,3 +1,5 @@
+const baseURL = 'http://localhost:4545'
+
 const express = require('express')
 const cors = require('cors')
 
