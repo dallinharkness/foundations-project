@@ -1,0 +1,264 @@
+/* gugi font::
+font-family: 'Fredoka One', cursive;
+font-family: 'Gugi', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Teko', sans-serif; 
+
+rubik font:
+font-family: 'Fredoka One', cursive;
+font-family: 'Gugi', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Rubik', sans-serif;
+font-family: 'Teko', sans-serif;*/
+
+/* below is the css for title */
+*{
+    box-sizing: border-box;
+}
+
+
+/* html{
+    height: 100vh;
+} */
+
+body{
+    background-color: #5E807F;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 50vh; */
+    
+}
+
+h1{
+    text-align: center;
+    animation: glitch 1s linear infinite;
+    position: relative;
+    top: 25px;
+    
+}
+
+@keyframes glitch{
+    2%,64%{
+        transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+        transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+        transform: translate(0,0) skew(12deg);
+    }
+}
+
+h1:before,
+h1:after{
+    content: attr(title);
+    position:absolute;
+    left:0;
+}
+
+h1:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path:polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+    2%,64%{
+        transform: translate(2px, -2px);
+    }
+    4%,60%{
+        transform: translate(-2px,2px);
+    }
+    62%{
+        transform: translate(13px,-0px)
+        skew(-13deg);
+    }
+}
+
+h1:after{
+    animation: glitchBottom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon( 0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBottom{
+    2%,64%{
+        transform: translate(-2px,0);
+    }
+    4%,60%{
+        transform: translate(-2px,0);
+    }
+    62%{
+        transform: translate(-22px,2px)
+        skew(21deg);
+    }
+}
+
+#ufojump{
+    font-family: 'Gugi', cursive;
+    color: #17B890;
+    font-size: 100px;
+    text-shadow: 2px 2px black;
+    margin:auto;
+}
+
+/* below is the flexbox */
+
+header{
+    height: 22vh;
+}
+
+header,footer,#outerbox{
+    width: 80vw;
+    background-color: #082D0F;
+}
+
+#outerbox{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 73vh;
+    /* width: 75%; */
+    
+}
+
+/* #left-box{
+    width: 13%;
+    height: 100vh;
+    background-color: #5E807F;
+    margin: 0;
+
+} */
+
+#middle-box{
+    width: 280px;
+    height: 380px;
+    background-color: #DEE5E5;
+    border-radius: 10px;
+    border: 3px solid #17B890;
+    box-shadow: 3px 3px black;
+    position: relative;
+    top: 50px;
+    
+}
+
+/* #right-box{
+    width: 13%;
+    height: 100vh;
+    background-color: #5E807F;
+    margin: 0;
+} */
+
+
+/* footer css */
+
+footer{
+    color: #17B890;
+    font-family: 'Gugi', cursive;
+    /* margin: 0 auto; */
+    /* bottom: 0; */
+    text-align: center;
+    height: 5vh;
+}
+
+/* css for middlebox(login box) */
+
+#login{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+
+#username{
+    font-family: 'Varela Round', sans-serif;
+    position: relative;
+    top:45px;
+    left: 10px;
+}
+
+#user_input{
+    font-family: 'Varela Round', sans-serif;
+    border-radius: 5px;
+    position: relative;
+    left: 35px;
+    top: -20px;
+    border: none;
+    border-bottom: 2px solid #17B890;
+    background-color: #DEE5E5;
+    align-items: center;
+    width: 200px;
+    font-size: 20px;
+}
+
+#user_input:focus{
+    outline: none;
+}
+
+
+#password{
+    font-family: 'Varela Round', sans-serif;
+    position: relative;
+    top: 75px;
+    left: 10px;
+}
+
+#user_password{
+    font-family: 'Varela Round', sans-serif;
+    border-radius: 5px;
+    position: relative;
+    top: 85px;
+    left: 10px;
+}
+
+#ufogif{
+    width: 200px;
+    transform: rotate(-20deg);
+    position: relative;
+    top: -90px;
+    left: 28px;
+}
+
+#submit{
+    position: relative;
+    top: 60px;
+    left: 60px;
+    font-size: 30px;
+    border-radius: 5px;
+    transition-duration: .4s;
+    font-family: 'Varela Round', sans-serif;
+    background-color: #9DC5BB;
+    align-items: center;
+}
+
+a{text-decoration: none;}
+
+#submit:hover{
+    background-color: #17B890;
+    color: white;
+    
+}
+
+/* game css */
+
+canvas{
+    border: 2px solid #17B890;
+    /* background-image: url('/space.gif'); */
+    /* position: relative; */
+    /* top: 300px; */
+   
+}
+
+#boostbtn{
+    position: relative;
+    top: 325px;
+    left:175px;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: 'Gugi', cursive;
+
+}
