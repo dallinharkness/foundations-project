@@ -1,18 +1,20 @@
 var myGamePiece;
 var myObstacles = []
-// var canvasHtml = document.querySelector('#append')
+var myScore
+
 
 function startGame() { 
-    myGamePiece = new component(30, 30, 'red', 200, 200,)
+    myGamePiece = new component(40, 40, "/ufo-gif.gif", 200, 200,"image")
+    myScore = new component('30px', 'Gugi', 'white', 800, 28, 'text')
     myGameArea.start()
 }
 const myGameArea = {
     canvas : document.createElement('canvas'),
     start : function() {
         this.canvas.width = 1000
-        this.canvas.height = 450
+        this.canvas.height = 400
         this.context = this.canvas.getContext('2d')
-        document.body.insertBefore(this.canvas, document.body.childNodes[0])
+        document.body.insertBefore(this.canvas, document.body.childNodes[5])
         this.frameNo = 0
         this.interval = setInterval(updateGameArea, 20)
     },
@@ -22,17 +24,14 @@ const myGameArea = {
     stop : function() {
         clearInterval(this.interval)
     }
-    
-    // asdf.appendChild(canvas)
 }
 
-// document.addEventListener('', () => {
-//     var newCanvas = document.createElement('canvas')
-//     var container = canvasHtml
-//     container.appendChild(newCanvas)
-// })
-
 function component(width, height, color, x, y, type) {
+    this.type = type
+    if(type == "image") {
+        this.image = new Image(40, 40)
+        this.image.src = '/ufo-gif.gif'
+    }
     this.width = width;
     this.height = height;
     this.x = x;
@@ -41,10 +40,30 @@ function component(width, height, color, x, y, type) {
     this.speedY = 0
     this.gravity = .04
     this.gravitySpeed = 0
+
     this.update = function(){
     ctx = myGameArea.context;
-    ctx.fillStyle = color;
+    if(type == 'image'){
+        console.log('if')
+        ctx.drawImage(this.image,
+            this.x,
+            this.y,
+            this.width, this.height)
+    }else{
+        console.log('else')
+        ctx.fillStyle = color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+
+    if(this.type == 'text') {
+        ctx.font = this.width + ' ' + this.height
+        ctx.fillStyle = color
+        ctx.fillText(this.text, this.x, this.y)
+    }else{
+        ctx.fillStyle = color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    
     } 
     this.newPos = function() {
         this.gravitySpeed += this.gravity
@@ -67,7 +86,7 @@ function component(width, height, color, x, y, type) {
         }
         return crash
     }   
-}    
+
     this.hitBottom = function() {
         var rockbottom = myGameArea.canvas.height - this.height
         if (this.y > rockbottom){
@@ -75,41 +94,49 @@ function component(width, height, color, x, y, type) {
         }
     }
 
-
-
-
+    this.hitTop = function() {
+        var rockTop = myGameArea.canvas.height + this.height
+        if(this.y > rockTop){
+            this.y = rockTop
+        }
+    }
+}    
+    
 function updateGameArea() { 
     
-    var x,y
+    var x, height, gap, minHeight, maxHeight, minGap, maxGap
     for(i = 0; i < myObstacles.length; i += 1) {
         if(myGamePiece.crashWith(myObstacles[i])){
             myGameArea.stop()
-            
-            
             return
         }
-        
     }
-    
     myGameArea.clear()
-    
     myGameArea.frameNo += 1
     if(myGameArea.frameNo == 1 || everyinterval(90)){
         x = myGameArea.canvas.width
-        y = myGameArea.canvas.height - 200
-        myObstacles.push(new component(35, 200, 'blue', x, y))
-        
+        minHeight = 20
+        maxHeight = 200
+        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight)
+        minGap = 50
+        maxGap = 200
+        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap)
+        myObstacles.push(new component(35, height, 'blue', x, 0, 'image'))
+        myObstacles.push(new component(35, x - height - gap, 'blue', x, height + gap, 'image'))
     }
     for(i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].x += -3
+        myObstacles[i].x += -4.5
+        // myObstacles[i].newPos()
         myObstacles[i].update()
     }
-    // myGamePiece.newPos()
+    myScore.text='SCORE: ' + myGameArea.frameNo
+    myScore.update()
     myGamePiece.update()
+    
+    
     myGamePiece.speedX = 0
     myGamePiece.speedY = 0
     myGamePiece.newPos()
-    // myGamePiece.update()
 
 }
 
@@ -153,28 +180,3 @@ function stopMove() {
 
 
 
-// this.type = type
-//     if(type =='image') {
-//         this.image = new Image()
-//         this.image.src = color
-//     }
-//     this.width = width
-//     this.height = height
-//     this.x = x
-//     this.y = y
-//     this.update = function() {
-//         ctx = myGameArea.context
-//         if(type == 'image') {
-//             ctx.drawImage(this.image,
-//                 this.x,
-//                 this.y,
-//                 this.width, this.height)
-//         }else {
-//             ctx.fillStyle = color
-//             ctx.fillRect(this.x, this.y, this.width, this.height)
-//         }
-//     }
-
-//     this.newPos = function() {
-//         this.x += this.speedXthis.y += this.speedY
-//     }

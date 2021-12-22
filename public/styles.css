@@ -247,18 +247,47 @@ a{text-decoration: none;}
 
 canvas{
     border: 2px solid #17B890;
-    /* background-image: url('/space.gif'); */
-    /* position: relative; */
-    /* top: 300px; */
+    background-image: url('/space.gif');
+    position: relative;
+    top: -60px;
+    
    
 }
 
+
+
 #boostbtn{
     position: relative;
-    top: 325px;
-    left:175px;
+    top: 470px;
+    right: 0px;
     font-size: 40px;
     border-radius: 10px;
     font-family: 'Gugi', cursive;
+    height: 50px;
 
+}
+
+#bodyCanvas{
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #082D0F;
+}
+
+#footer{
+    font-family: 'Gugi', cursive;
+    text-align: center;
+    height: 5vh;
+    color: #17B890;
+    position: relative;
+    top: 512px;
+}
+
+#gamebox{
+    height: 73vh;
+    width: 80vw;
+    background-color: #082D0F;
+    position: relative;
+    /* z-index: -4; */
 }
