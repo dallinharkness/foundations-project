@@ -1,7 +1,8 @@
 const baseURL = 'http://localhost:4545'
-
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const {SERVER_PORT} = process.env
 
 const{
     getUser,
@@ -20,6 +21,4 @@ app.post('/api/newuser', newUser)
 app.put('/api/newscores', getScores)
 
 
-app.listen(4545, () => {
-    console.log('hello there 4545')
-})
+app.listen(SERVER_PORT, () => console.log(`running on ${SERVER_PORT}`))
