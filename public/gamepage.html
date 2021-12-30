@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UFO JUMP</title>
     <link rel='stylesheet' href='reset.css'>
-    <link rel='stylesheet' href='/css'>
+    <link rel='stylesheet' href='styles.css'>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Rubik:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body id='bodyCanvas' onload='startGame()'>
@@ -15,30 +15,12 @@
         <h1 id='ufojump'>UFO JUMP</h1>
     </section>
 
-<section id='scores'>
-    <section id='userScores'>
-            <table>
-                <tr>
-                    <th>pizzalover3000</th>
-                    
-                </tr>
-                <tr>
-                    <td>'4365'</td>
-                </tr>
-                    <td>'345'</td>
-                </tr>
-                    <td>'764'</td>
-                </tr>
-                    <td>'33'</td>
-                </tr>
-                    <td>'546'</td>
-                </tr>
+<section>
+    <button id='highscore'>Highscore</button>
+ </section>
+ 
 
-            </table>
-    </section>
-</section>
-
-    <section id='canvasgoeshere'></section>
+    
 
    
     <section>
@@ -46,8 +28,39 @@
             <br/>
             <br/>
             <section id='footer'>©UFO JUMP 2022</section>
+            <form id='feedbackform'>
+                <h5>Got something to say?</h5>
+                <input maxlength='100' id='feedbackinput' type='text' placeholder="insert feedback"><button id='feedbackbtn' type="submit">Submit</button>
+            </form>
     </section> 
 
-<script src='/js'></script>
+<script src='https://unpkg.com/axios/dist/axios.min.js'>
+</script>
+<script src='index.js'>
+   
+   document.getElementById("highscore").onclick = function () {
+        axios.get("http://localhost:5500/api/highscore/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+
+    document.getElementById('feedbackbtn').onclick = function () {
+        axios.post('/api/feedback', {
+    //submit button is clicked
+     })
+        .then(function (response) {
+        console.log(response);
+     })
+        .catch(function (error) {
+        console.log(error);
+    });
+    
+}
+    
+
+
+</script>
 </body>
 </html>

@@ -29,8 +29,8 @@ const myGameArea = {
 function component(width, height, color, x, y, type) {
     this.type = type
     if(type == "image") {
-        this.image = new Image(40, 40)
-        this.image.src = '/ufo-gif.gif'
+        this.image = new Image()
+        this.image.src = color
         
     }
     this.width = width;

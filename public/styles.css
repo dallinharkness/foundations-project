@@ -249,7 +249,7 @@ canvas{
     border: 2px solid #17B890;
     background-image: url('/space.gif');
     position: relative;
-    top: -200px;
+    top: 10px;
     
    
 }
@@ -258,8 +258,8 @@ canvas{
 
 #boostbtn{
     position: relative;
-    top: -190px;
-    right: 0px;
+    top: 20px;
+    left: 35px;
     font-size: 40px;
     border-radius: 10px;
     font-family: 'Gugi', cursive;
@@ -282,7 +282,7 @@ canvas{
     height: 0vh;
     color: #17B890;
     position: relative;
-    top: -120px;
+    top: 80px;
 }
 
 #gamebox{
@@ -293,28 +293,29 @@ canvas{
     /* z-index: -4; */
 }
 
-/* scoreboards*/
-
-#scores{
-    border: 2px solid #17B890;
-    color: white;
-    float: left;
-    display: flex;
+#highscore{
     position: relative;
-    left: -630px;
-    top: 40px;
-
-}
-
-#userScores{
-    border: 2px #17B890 solid;
-    padding: 10px;
+    top: 520px;
+    font-size: 20px;
+    border-radius: 5px;
     font-family: 'Gugi', cursive;
-    font-size: 25px;
-
+    left: 00px;
+    
+    
 }
 
-table,th,td{
-    /* border: 1px solid #17B890; */
-    padding: 5px;
+#feedbackform{
+    position: relative;
+    right: -500px;
+}
+
+h5{
+    color: #17B890;
+    font-family: 'Gugi', cursive;
+}
+
+#feedbackinput,#feedbackbtn{
+    border-radius: 5px;
+    font-family: 'Gugi', cursive;
+
 }
