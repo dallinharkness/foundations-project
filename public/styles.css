@@ -22,7 +22,7 @@ font-family: 'Teko', sans-serif;*/
 } */
 
 body{
-    background-color: #5E807F;
+    background-color: #020887;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ h1:after{
 
 #ufojump{
     font-family: 'Gugi', cursive;
-    color: #17B890;
+    color: #020887;
     font-size: 100px;
     text-shadow: 2px 2px black;
     margin:auto;
@@ -112,7 +112,7 @@ header{
 
 header,footer,#outerbox{
     width: 80vw;
-    background-color: #082D0F;
+    background-color: #647AA3;
 }
 
 #outerbox{
@@ -138,7 +138,7 @@ header,footer,#outerbox{
     height: 380px;
     background-color: #DEE5E5;
     border-radius: 10px;
-    border: 3px solid #17B890;
+    border: 3px solid #334195;
     box-shadow: 3px 3px black;
     position: relative;
     top: 50px;
@@ -153,10 +153,39 @@ header,footer,#outerbox{
 } */
 
 
+#block{
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border: 2px solid black;
+    position: relative;
+    left: 75px;
+    top: -50px;
+    transform: rotate(-20deg);
+    animation-name: block;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    
+    
+}
+
+@keyframes block{
+    50% {transform: rotate(45deg);}
+    
+}
+
+#link{
+    text-decoration: #020887;
+}
+
+#link:visited{
+    text-decoration: none;
+    color: #020887;
+}
 /* footer css */
 
 footer{
-    color: #17B890;
+    color: #020887;
     font-family: 'Gugi', cursive;
     /* margin: 0 auto; */
     /* bottom: 0; */
@@ -188,7 +217,7 @@ footer{
     left: 35px;
     top: -20px;
     border: none;
-    border-bottom: 2px solid #17B890;
+    border-bottom: 2px solid #020887;
     background-color: #DEE5E5;
     align-items: center;
     width: 200px;
@@ -231,14 +260,19 @@ footer{
     border-radius: 5px;
     transition-duration: .4s;
     font-family: 'Varela Round', sans-serif;
-    background-color: #9DC5BB;
+    background-color: #DEE5E5;
     align-items: center;
 }
 
 a{text-decoration: none;}
 
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
 #submit:hover{
-    background-color: #17B890;
+    background-color: #334195;
     color: white;
     
 }
@@ -246,7 +280,7 @@ a{text-decoration: none;}
 /* game css */
 
 canvas{
-    border: 2px solid #17B890;
+    border: 4px solid #020887;
     background-image: url('/space.gif');
     position: relative;
     top: 10px;
@@ -272,7 +306,7 @@ canvas{
     height: 0vh;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #082D0F;
+    background-color: #647AA3;
     overflow: hidden;
 }
 
@@ -280,7 +314,7 @@ canvas{
     font-family: 'Gugi', cursive;
     text-align: center;
     height: 0vh;
-    color: #17B890;
+    color: #020887;
     position: relative;
     top: 80px;
 }
@@ -288,7 +322,7 @@ canvas{
 #gamebox{
     height: 73vh;
     width: 80vw;
-    background-color: #082D0F;
+    background-color: #647AA3;
     position: relative;
     /* z-index: -4; */
 }
@@ -310,7 +344,7 @@ canvas{
 }
 
 h5{
-    color: #17B890;
+    color: #020887;
     font-family: 'Gugi', cursive;
 }
 

@@ -2,9 +2,8 @@ var myGamePiece;
 var myObstacles = []
 var myScore
 
-
 function startGame() { 
-    myGamePiece = new component(40, 40, "/ufo-gif.gif", 200, 200,"image")
+    myGamePiece = new component(40, 40, "ufo-gif.gif", 200, 200,"image")
     myScore = new component('30px', 'Gugi', 'white', 800, 28, 'text')
     myGameArea.start()
 }
@@ -161,7 +160,25 @@ function stopMove() {
 
 
 
+document.getElementById("highscore").onclick = function () {
+    axios.get("http://localhost:5500/highscore/")
+        .then(function (response) {
+          const data = response.data;
+          alert(data);
+        });
+  };
 
+document.getElementById('feedbackbtn').onclick = function () {
+    axios.post('http://localhost:5500/feedback')
+    .then(function (response) {
+        alert(response.data)
+    console.log(response);
+ })
+    .catch(function (error) {
+    console.log(error);
+});
+
+}
 
 
 

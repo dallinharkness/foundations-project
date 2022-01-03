@@ -8,14 +8,14 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.get("/api/highscore", (req, res) => {
-    const urHighscore = ["UFOjumper4756: 2456"]
+app.get("/highscore", (req, res) => {
+    const urHighscore = ["blockman: 2456"]
     
     res.status(200).send(urHighscore);
     
   });
 
-  app.post("/api/feedback", (req, res) => {
+  app.post("/feedback", (req, res) => {
     const thankYou = ["Thank you for your feedback!"]
     
     res.status(200).send(thankYou);
@@ -28,5 +28,5 @@ app.get("/api/highscore", (req, res) => {
 
 
 app.listen(5500, () => {
-    console.log('You are on port 4545')
+    console.log('You are on port 5500')
 })

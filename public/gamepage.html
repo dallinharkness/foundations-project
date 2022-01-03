@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UFO JUMP</title>
+    <title>BLOCK JUMP</title>
     <link rel='stylesheet' href='reset.css'>
     <link rel='stylesheet' href='styles.css'>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Rubik:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body id='bodyCanvas' onload='startGame()'>
 
     <section>
-        <h1 id='ufojump'>UFO JUMP</h1>
+        <h1 id='ufojump'><a id='link' href='home.html'>BLOCK JUMP</a></h1>
     </section>
 
 <section>
@@ -27,40 +27,16 @@
             <button onclick='moveup()' id='boostbtn'>BOOST</button>
             <br/>
             <br/>
-            <section id='footer'>©UFO JUMP 2022</section>
+            <section id='footer'>©BLOCK JUMP 2022</section>
             <form id='feedbackform'>
                 <h5>Got something to say?</h5>
-                <input maxlength='100' id='feedbackinput' type='text' placeholder="insert feedback"><button id='feedbackbtn' type="submit">Submit</button>
+                <input maxlength='100' id='feedbackinput' type='text' placeholder="insert feedback"><button id='feedbackbtn' type="button" value="send">Submit</button>
             </form>
     </section> 
 
-<script src='https://unpkg.com/axios/dist/axios.min.js'>
+<script src="https://unpkg.com/axios/dist/axios.min.js">
 </script>
 <script src='index.js'>
-   
-   document.getElementById("highscore").onclick = function () {
-        axios.get("http://localhost:5500/api/highscore/")
-            .then(function (response) {
-              const data = response.data;
-              alert(data);
-            });
-      };
-
-    document.getElementById('feedbackbtn').onclick = function () {
-        axios.post('/api/feedback', {
-    //submit button is clicked
-     })
-        .then(function (response) {
-        console.log(response);
-     })
-        .catch(function (error) {
-        console.log(error);
-    });
-    
-}
-    
-
-
 </script>
 </body>
 </html>
