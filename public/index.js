@@ -124,7 +124,6 @@ function updateGameArea() {
     }
     for(i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -4.5
-        // myObstacles[i].newPos()
         myObstacles[i].update()
     }
     myScore.text='SCORE: ' + myGameArea.frameNo

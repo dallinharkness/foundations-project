@@ -1,25 +1,10 @@
-/* gugi font::
-font-family: 'Fredoka One', cursive;
-font-family: 'Gugi', cursive;
-font-family: 'Press Start 2P', cursive;
-font-family: 'Teko', sans-serif; 
 
-rubik font:
-font-family: 'Fredoka One', cursive;
-font-family: 'Gugi', cursive;
-font-family: 'Press Start 2P', cursive;
-font-family: 'Rubik', sans-serif;
-font-family: 'Teko', sans-serif;*/
-
-/* below is the css for title */
 *{
     box-sizing: border-box;
 }
 
 
-/* html{
-    height: 100vh;
-} */
+
 
 body{
     background-color: #020887;
@@ -27,7 +12,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 50vh; */
+    
     
 }
 
@@ -104,7 +89,7 @@ h1:after{
     margin:auto;
 }
 
-/* below is the flexbox */
+
 
 header{
     height: 22vh;
@@ -121,17 +106,11 @@ header,footer,#outerbox{
     flex-direction: row;
     justify-content: center;
     height: 73vh;
-    /* width: 75%; */
+    
     
 }
 
-/* #left-box{
-    width: 13%;
-    height: 100vh;
-    background-color: #5E807F;
-    margin: 0;
 
-} */
 
 #middle-box{
     width: 280px;
@@ -145,12 +124,7 @@ header,footer,#outerbox{
     
 }
 
-/* #right-box{
-    width: 13%;
-    height: 100vh;
-    background-color: #5E807F;
-    margin: 0;
-} */
+
 
 
 #block{
@@ -182,18 +156,17 @@ header,footer,#outerbox{
     text-decoration: none;
     color: #020887;
 }
-/* footer css */
+
 
 footer{
     color: #020887;
     font-family: 'Gugi', cursive;
-    /* margin: 0 auto; */
-    /* bottom: 0; */
+    
     text-align: center;
     height: 5vh;
 }
 
-/* css for middlebox(login box) */
+
 
 #login{
     font-family: 'Varela Round', sans-serif;
@@ -277,7 +250,7 @@ a:visited{
     
 }
 
-/* game css */
+
 
 canvas{
     border: 4px solid #020887;
@@ -324,7 +297,7 @@ canvas{
     width: 80vw;
     background-color: #647AA3;
     position: relative;
-    /* z-index: -4; */
+    
 }
 
 #highscore{
